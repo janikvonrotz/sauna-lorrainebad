@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Tab Navigation Template",
+    "name": "Sauna Lorrainebad",
     "slug": "sauna-lorrainebad",
     "privacy": "public",
     "sdkVersion": "36.0.0",
@@ -26,6 +26,8 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": "",
+    "githubUrl": "https://github.com/janikvonrotz/sauna-lorrainebad"
   }
 }

@@ -1,25 +1,26 @@
 import * as React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
-
+import { AARE_TEMPERATURE } from '../components/Queries'
+import Loading from '../components/Loading'
+import Error from '../components/Error'
+import { useQuery } from '@apollo/react-hooks'
 import { MonoText } from '../components/StyledText'
 
 export default function TemperatureScreen () {
+  const { loading, error, data } = useQuery(AARE_TEMPERATURE)
+  if (error) return <Error />
+
   return (
     <View style={styles.container}>
       <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-
-        <View style={styles.getStartedContainer}>
-
-          <MonoText>Die Temperatur ist wie folgt:</MonoText>
-
-          <Text style={styles.getStartedText}>
-            Change any of the text, save the file, and your app will automatically reload.
-          </Text>
+        <View style={styles.innerContainer}>
+          <MonoText>Vom Aare Guru erhalten wir die Temperatur. Die Aare Temperatur beträgt aktuell:</MonoText>
+          {loading ? <Loading /> : <MonoText style={styles.stat}>{`${data.aareTemperature.value}°C`}</MonoText>}
+          <MonoText>Dazu meint der Guru:</MonoText>
+          {loading ? <Loading /> : <MonoText style={styles.quote}>„{data.aareTemperature.quote}“</MonoText>}
         </View>
-
       </ScrollView>
-
     </View>
   )
 }
@@ -32,19 +33,18 @@ const styles = StyleSheet.create({
   contentContainer: {
     paddingTop: 30
   },
-  welcomeContainer: {
+  innerContainer: {
     alignItems: 'center',
+    marginHorizontal: 30
+  },
+  stat: {
+    fontSize: 50,
     marginTop: 10,
     marginBottom: 20
   },
-  getStartedContainer: {
-    alignItems: 'center',
-    marginHorizontal: 50
-  },
-  getStartedText: {
-    fontSize: 17,
-    color: 'rgba(96,100,109, 1)',
-    lineHeight: 24,
-    textAlign: 'center'
+  quote: {
+    fontSize: 20,
+    marginTop: 10,
+    marginBottom: 20
   }
 })

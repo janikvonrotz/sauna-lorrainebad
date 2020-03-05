@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import * as WebBrowser from 'expo-web-browser'
 import { RectButton, ScrollView } from 'react-native-gesture-handler'
@@ -8,24 +8,22 @@ import Loading from '../components/Loading'
 import Error from '../components/Error'
 import { useQuery } from '@apollo/react-hooks'
 import Moment from 'moment'
+import { MonoText } from '../components/StyledText'
 
 export default function LinksScreen () {
   const { loading, error, data } = useQuery(ALL_NEWS)
-
-  if (loading) return <Loading />
   if (error) return <Error />
 
   // Intialize moment for date formatting
-  Moment.locale('de')
+  Moment.locale('de-ch')
 
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-
-      {data.allNews.map(item => (
+      {loading ? <Loading /> : data.allNews.map(item => (
         <OptionButton
           key={item._id}
           icon='md-information-circle-outline'
-          label={`${item.title} (${Moment(item.date).format('Do MMMM YYYY')})`}
+          label={`${item.title} - ${Moment(item.date).format('Do MMMM YYYY')}`}
           onPress={() => WebBrowser.openBrowserAsync(item.link)}
         />
       ))}
@@ -41,7 +39,7 @@ function OptionButton ({ icon, label, onPress, isLastOption }) {
           <Ionicons name={icon} size={22} color='rgba(0,0,0,0.35)' />
         </View>
         <View style={styles.optionTextContainer}>
-          <Text style={styles.optionText}>{label}</Text>
+          <MonoText style={styles.optionText}>{label}</MonoText>
         </View>
       </View>
     </RectButton>

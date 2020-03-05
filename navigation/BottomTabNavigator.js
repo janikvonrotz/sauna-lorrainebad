@@ -38,7 +38,7 @@ export default function BottomTabNavigator({ navigation, route }) {
         name="Temperature"
         component={TemperatureScreen}
         options={{
-          title: 'Aare Temperatur',
+          title: 'Aare',
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-thermometer" />,
         }}
       />

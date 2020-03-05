@@ -1,25 +1,27 @@
 import * as React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-import { ScrollView } from 'react-native-gesture-handler'
-
+import { StyleSheet, Text, View, Linking } from 'react-native'
+import { ScrollView, RectButton } from 'react-native-gesture-handler'
+import * as WebBrowser from 'expo-web-browser'
 import { MonoText } from '../components/StyledText'
 
 export default function ContactScreen () {
   return (
     <View style={styles.container}>
       <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-
-        <View style={styles.getStartedContainer}>
-
-          <MonoText>Sie können uns wie folgt kontaktieren:</MonoText>
-
-          <Text style={styles.getStartedText}>
-            Change any of the text, save the file, and your app will automatically reload.
-          </Text>
+        <View style={styles.innerContainer}>
+          <MonoText>Du möchtest mit uns Konakt aufnehmen?</MonoText>
+          <Text>{'\n'}</Text>
+          <MonoText>Die Empfangs-Yurte ist erreichbar unter:</MonoText>
+          <Text>{'\n'}</Text>
+          <MonoText onPress={() => Linking.openURL('tel:+41788323264')}>078 832 32 64</MonoText>
+          <Text>{'\n'}</Text>
+          <MonoText>Oder schreiben uns eine Mail:</MonoText>
+          <Text>{'\n'}</Text>
+          <RectButton onPress={() => WebBrowser.openBrowserAsync('http://saunalorrainebad.ch/kontakt/')}>
+            <MonoText>Kontaktformular</MonoText>
+          </RectButton>
         </View>
-
       </ScrollView>
-
     </View>
   )
 }
@@ -32,19 +34,8 @@ const styles = StyleSheet.create({
   contentContainer: {
     paddingTop: 30
   },
-  welcomeContainer: {
+  innerContainer: {
     alignItems: 'center',
-    marginTop: 10,
-    marginBottom: 20
-  },
-  getStartedContainer: {
-    alignItems: 'center',
-    marginHorizontal: 50
-  },
-  getStartedText: {
-    fontSize: 17,
-    color: 'rgba(96,100,109, 1)',
-    lineHeight: 24,
-    textAlign: 'center'
+    marginHorizontal: 30
   }
 })
