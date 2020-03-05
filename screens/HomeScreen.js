@@ -41,14 +41,12 @@ const styles = StyleSheet.create({
   },
   entryContainer: {
     alignItems: 'center',
-    marginTop: 10,
     marginBottom: 20
   },
   entryImage: {
     width: 300,
     height: 300,
     resizeMode: 'contain',
-    marginTop: 3,
     marginLeft: -10
   },
   innerContainer: {

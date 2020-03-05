@@ -67,7 +67,7 @@ function getHeaderTitle(route) {
 
   switch (routeName) {
     case 'Home':
-      return 'Sauna Lorrainebad'
+      return 'Home'
     case 'Capacity':
       return 'Auslastung'
     case 'Temperature':
