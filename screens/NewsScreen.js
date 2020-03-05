@@ -3,28 +3,32 @@ import { StyleSheet, Text, View } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import * as WebBrowser from 'expo-web-browser'
 import { RectButton, ScrollView } from 'react-native-gesture-handler'
+import { ALL_NEWS } from '../components/Queries'
+import Loading from '../components/Loading'
+import Error from '../components/Error'
+import { useQuery } from '@apollo/react-hooks'
+import Moment from 'moment'
 
 export default function LinksScreen () {
+  const { loading, error, data } = useQuery(ALL_NEWS)
+
+  if (loading) return <Loading />
+  if (error) return <Error />
+
+  // Intialize moment for date formatting
+  Moment.locale('de')
+
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-      <OptionButton
-        icon='md-school'
-        label='Read the Expo documentation'
-        onPress={() => WebBrowser.openBrowserAsync('https://docs.expo.io')}
-      />
 
-      <OptionButton
-        icon='md-compass'
-        label='Read the React Navigation documentation'
-        onPress={() => WebBrowser.openBrowserAsync('https://reactnavigation.org')}
-      />
-
-      <OptionButton
-        icon='ios-chatboxes'
-        label='Ask a question on the forums'
-        onPress={() => WebBrowser.openBrowserAsync('https://forums.expo.io')}
-        isLastOption
-      />
+      {data.allNews.map(item => (
+        <OptionButton
+          key={item._id}
+          icon='md-information-circle-outline'
+          label={`${item.title} (${Moment(item.date).format('Do MMMM YYYY')})`}
+          onPress={() => WebBrowser.openBrowserAsync(item.link)}
+        />
+      ))}
     </ScrollView>
   )
 }
