@@ -3,6 +3,6 @@ import { Text } from 'react-native'
 
 export default function Loading () {
   return (
-    <Text>Laden...</Text>
+    <Text>Lädt...</Text>
   )
 }

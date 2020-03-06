@@ -17,7 +17,6 @@ export default function CapacityScreen () {
         <View style={styles.innerContainer}>
           <MonoText>Die Besucherzahl unserer Sauna wird fortlaufend aktualisiert. Aktuelle Auslastung:</MonoText>
           {loading ? <Loading /> : <MonoText style={styles.quote}>„{data.sauna.capacity_message}“</MonoText>}
-
         </View>
       </ScrollView>
     </View>

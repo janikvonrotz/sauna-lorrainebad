@@ -28,11 +28,21 @@ const SAUNA = gql`
     capacity_message
   }
 }
+`
 
+const DAILY_QUOTE = gql`
+{
+  dailyQuote {
+    _id
+    quote
+    author
+  }
+}
 `
 
 export {
   ALL_NEWS,
   AARE_TEMPERATURE,
-  SAUNA
+  SAUNA,
+  DAILY_QUOTE
 }
