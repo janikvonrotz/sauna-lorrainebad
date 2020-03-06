@@ -10,6 +10,15 @@
       "web"
     ],
     "version": "1.0.0",
+    "ios": {
+      "bundleIdentifier": "ch.apland.saunalorrainebad",
+      "buildNumber": "1.0.0",
+      "supportsTablet": false
+    },
+    "android": {
+      "package": "ch.apland.saunalorrainebad",
+      "versionCode": 1
+    },
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
@@ -24,10 +33,7 @@
     "assetBundlePatterns": [
       "**/*"
     ],
-    "ios": {
-      "supportsTablet": true
-    },
-    "description": "",
+    "description": "Die einzige und offizielle Sauna Lorrainebad App.",
     "githubUrl": "https://github.com/janikvonrotz/sauna-lorrainebad"
   }
 }

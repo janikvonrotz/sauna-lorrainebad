@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { StyleSheet, View } from 'react-native'
+import { StyleSheet, View, RefreshControl } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import * as WebBrowser from 'expo-web-browser'
 import { RectButton, ScrollView } from 'react-native-gesture-handler'
@@ -10,15 +10,37 @@ import { useQuery } from '@apollo/react-hooks'
 import Moment from 'moment'
 import { MonoText } from '../components/StyledText'
 
+function wait (timeout) {
+  return new Promise(resolve => {
+    setTimeout(resolve, timeout)
+  })
+}
+
 export default function LinksScreen () {
-  const { loading, error, data } = useQuery(ALL_NEWS)
+  // Fetch news
+  const { loading, error, data, refetch } = useQuery(ALL_NEWS)
+
+  // Refersh control
+  const [refreshing, setRefreshing] = React.useState(false)
+  const onRefresh = React.useCallback(() => {
+    setRefreshing(true)
+    refetch()
+    wait(2000).then(() => setRefreshing(false))
+  }, [refreshing])
+
   if (error) return <Error />
 
   // Intialize moment for date formatting
   Moment.locale('de-ch')
 
   return (
-    <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+    <ScrollView
+      style={styles.container}
+      contentContainerStyle={styles.contentContainer}
+      refreshControl={
+        <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+      }
+    >
       {loading ? <Loading /> : data.allNews.map(item => (
         <OptionButton
           key={item._id}

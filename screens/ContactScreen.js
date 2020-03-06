@@ -9,9 +9,7 @@ export default function ContactScreen () {
     <View style={styles.container}>
       <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
         <View style={styles.innerContainer}>
-          <MonoText>Du möchtest mit uns Konakt aufnehmen?</MonoText>
-          <Text>{'\n'}</Text>
-          <MonoText>Die Empfangs-Yurte ist erreichbar unter:</MonoText>
+          <MonoText>Du möchtest mit uns Konakt aufnehmen? Die Empfangs-Yurte ist erreichbar unter:</MonoText>
           <Text>{'\n'}</Text>
           <MonoText onPress={() => Linking.openURL('tel:+41788323264')}>078 832 32 64</MonoText>
           <Text>{'\n'}</Text>
