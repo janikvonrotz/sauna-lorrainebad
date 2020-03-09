@@ -62,7 +62,7 @@ export default function App (props) {
     return (
       <View style={styles.container}>
         <ApolloProvider client={client}>
-          {Platform.OS === 'ios' && <StatusBar barStyle='default' />}
+          {Platform.OS === 'ios' && <StatusBar barStyle='dark-content' />}
           <NavigationContainer ref={containerRef} initialState={initialNavigationState}>
             <Stack.Navigator>
               <Stack.Screen name='Root' component={BottomTabNavigator} />
@@ -77,6 +77,6 @@ export default function App (props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#000'
+    backgroundColor: '#fff'
   }
 })
