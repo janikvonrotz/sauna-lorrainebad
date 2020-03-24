@@ -14,12 +14,10 @@
     ],
     "build": {
       "env": {
-        "IS_NOW": "true",
         "ENV": "PROD"
       }
     },
     "env": {
-      "IS_NOW": "true",
       "ENV": "PROD"
     }
   }
