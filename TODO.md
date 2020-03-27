@@ -1,5 +1,9 @@
 # TODO
 
+## Build
+
+- [ ] Check build comments and use `import() or require.ensure`
+
 ## Management
 
 - [ ] Checkout update process for app
