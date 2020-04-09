@@ -6,6 +6,10 @@
 - [ ] Publish to android store
 - [ ] Checkout update process for app
 
+## Iimprovment
+
+- [ ] Refactor fonts styles
+
 ## Development
 
 - [ ] Install Android Emulator
@@ -19,16 +23,13 @@
 
 - [ ] Setup ios build process
 
-## Screens
-
-- [ ] Add people to screen capacity
-
 ## Analytics
 
 - [ ] Add some analytics
 
 ## Done
 
+- [-] Add people to screen capacity
 - [-] Check build comments and use `import() or require.ensure`
 - [x] Anzeige Auslastung im Header ohne Gänsefüsschen
 - [x] Farbe Blau #24a7cf für Auslastung

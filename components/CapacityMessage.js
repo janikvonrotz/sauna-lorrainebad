@@ -10,5 +10,8 @@ export default function CapacityMessage () {
   const { loading, error, data } = useQuery(SAUNA)
 
   if (error) return <Error />
-  return loading ? <Loading /> : <Text style={[{ color: Colors.headerText }]}>{data.sauna.capacity_message}</Text>
+  return loading ? <Loading /> : <Text style={[{ 
+    color: Colors.headerText,
+    fontWeight: 'bold'
+  }]}>{data.sauna.capacity_message}</Text>
 }

@@ -64,7 +64,7 @@ export default function App (props) {
         <ApolloProvider client={client}>
           {Platform.OS === 'ios' && <StatusBar barStyle='dark-content' />}
           <NavigationContainer ref={containerRef} initialState={initialNavigationState}>
-            <Stack.Navigator>
+            <Stack.Navigator screenOptions={{ headerTitleAlign: 'center' }}>
               <Stack.Screen name='Root' component={BottomTabNavigator} />
             </Stack.Navigator>
           </NavigationContainer>

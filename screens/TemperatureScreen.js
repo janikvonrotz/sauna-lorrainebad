@@ -65,10 +65,12 @@ const styles = StyleSheet.create({
   },
   quote: {
     fontSize: 18,
-    marginBottom: 10
+    marginBottom: 10,
+    textAlign: 'center'
   },
   text: {
     fontSize: 18,
-    marginBottom: 10
+    marginBottom: 10,
+    textAlign: 'center'
   }
 })
