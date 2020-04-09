@@ -67,8 +67,8 @@ const styles = StyleSheet.create({
     marginBottom: 20
   },
   entryImage: {
-    width: 300,
-    height: 300,
+    width: 200,
+    height: 200,
     resizeMode: 'contain',
     marginLeft: -10
   },
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 30
   },
   quote: {
-    fontSize: 20,
+    fontSize: 18,
     marginBottom: 10,
     maxWidth: 500,
     textAlign: 'center'
