@@ -1,10 +1,6 @@
 # TODO
 
-## Build
-
-- [ ] Check build comments and use `import() or require.ensure`
-
-## Management
+## Business
 
 - [ ] Publish to ios store
 - [ ] Publish to android store
@@ -33,6 +29,7 @@
 
 ## Done
 
+- [-] Check build comments and use `import() or require.ensure`
 - [x] Anzeige Auslastung im Header ohne Gänsefüsschen
 - [x] Farbe Blau #24a7cf für Auslastung
 - [x] Entfernen Willkommenstext, Einleitung Saunaspruch und Gänsefüsschen

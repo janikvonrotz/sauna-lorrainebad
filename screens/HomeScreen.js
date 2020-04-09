@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff'
   },
   contentContainer: {
-    paddingTop: 30
+    paddingTop: 10
   },
   entryContainer: {
     alignItems: 'center',
@@ -70,8 +70,7 @@ const styles = StyleSheet.create({
     width: 300,
     height: 300,
     resizeMode: 'contain',
-    marginLeft: -10,
-    marginTop: 10
+    marginLeft: -10
   },
   innerContainer: {
     alignItems: 'center',
