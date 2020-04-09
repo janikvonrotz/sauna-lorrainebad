@@ -39,7 +39,7 @@ export default function TemperatureScreen () {
           <VerdanaText style={styles.text}>Die Aare Temperatur beträgt aktuell:</VerdanaText>
           {loading ? <Loading /> : <>
             <VerdanaText style={styles.stat}>{`${data.aareTemperature.value}°C`}</VerdanaText>
-            <VerdanaText style={styles.quote}>{data.aareTemperature.quote}</VerdanaText>
+            <VerdanaText style={styles.quote}>Guru: {data.aareTemperature.quote}</VerdanaText>
           </>}
         </View>
       </ScrollView>
