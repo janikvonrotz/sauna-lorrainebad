@@ -6,16 +6,9 @@
 
 ## Management
 
+- [ ] Publish to ios store
+- [ ] Publish to android store
 - [ ] Checkout update process for app
-- [ ] Add Readme to project
-
-## Bugs
-
-- [ ] News not working on android -> emulator
-
-## Design
-
-- [x] Make status bar text dark
 
 ## Development
 
@@ -30,15 +23,28 @@
 
 - [ ] Setup ios build process
 
-## Functions
-
-- [x] Add pull to refresh to scroll views with data
-
 ## Screens
 
 - [ ] Add people to screen capacity
-- [x] Display daily Sauna quote
 
 ## Analytics
 
 - [ ] Add some analytics
+
+## Done
+
+- [x] Anzeige Auslastung im Header ohne Gänsefüsschen
+- [x] Farbe Blau #24a7cf für Auslastung
+- [x] Entfernen Willkommenstext, Einleitung Saunaspruch und Gänsefüsschen
+- [x] Sauna Spruch verkleinern
+- [x] Entfernen Reiter "Auslastung"
+- [x] Aare Anzeige ohne ersten Satz
+- [x] Aare Anzeige Guru Spruch in einem Satz.
+- [x] Entfernen Reiter "News"
+- [x] Kontaktseite mit Weblink, Nummer und Kontaktformular
+- [x] Schriftart Verdana, zentriert und gleiche Grösse
+- [x] Add Readme to project
+- [-] News not working on android -> emulator
+- [x] Make status bar text dark
+- [x] Add pull to refresh to scroll views with data
+- [x] Display daily Sauna quote

@@ -1,8 +1,14 @@
 import React from 'react'
-import { Text } from 'react-native'
+import { Text, StyleSheet } from 'react-native'
 
 export default function Loading () {
   return (
-    <Text>Lädt...</Text>
+    <Text style={styles.text}>Lädt...</Text>
   )
 }
+
+const styles = StyleSheet.create({
+  text: {
+    fontSize: 18
+  }
+})

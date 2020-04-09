@@ -1,11 +1,11 @@
 import * as React from 'react'
-import { Image, StyleSheet, View, Text, RefreshControl } from 'react-native'
+import { Image, StyleSheet, View, RefreshControl } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
 import { DAILY_QUOTE } from '../components/Queries'
 import Loading from '../components/Loading'
 import Error from '../components/Error'
 import { useQuery } from '@apollo/react-hooks'
-import { MonoText } from '../components/StyledText'
+import { VerdanaText } from '../components/StyledText'
 
 function wait (timeout) {
   return new Promise(resolve => {
@@ -42,10 +42,7 @@ export default function HomeScreen () {
           />
         </View>
         <View style={styles.innerContainer}>
-          <MonoText>Willkommen bei der Sauna Lorrainebad! Hier findest du alles Wissenswerte über unsere Sauna-Landschaft.</MonoText>
-          <Text>{'\n'}</Text>
-          <MonoText>Saunaspruch des Tages:</MonoText>
-          {loading ? <Loading /> : <MonoText style={styles.quote}>„{data.dailyQuote.quote}“</MonoText>}
+          {loading ? <Loading /> : <VerdanaText style={styles.quote}>{data.dailyQuote.quote}</VerdanaText>}
         </View>
       </ScrollView>
 
@@ -73,7 +70,8 @@ const styles = StyleSheet.create({
     width: 300,
     height: 300,
     resizeMode: 'contain',
-    marginLeft: -10
+    marginLeft: -10,
+    marginTop: 10
   },
   innerContainer: {
     alignItems: 'center',
@@ -81,7 +79,8 @@ const styles = StyleSheet.create({
   },
   quote: {
     fontSize: 20,
-    marginTop: 10,
-    marginBottom: 20
+    marginBottom: 10,
+    maxWidth: 500,
+    textAlign: 'center'
   }
 })

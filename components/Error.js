@@ -1,8 +1,14 @@
 import React from 'react'
-import { Text } from 'react-native'
+import { Text, StyleSheet } from 'react-native'
 
 export default function Error () {
   return (
-    <Text>Error :(</Text>
+    <Text style={styles.text}>Error :(</Text>
   )
 }
+
+const styles = StyleSheet.create({
+  text: {
+    fontSize: 18
+  }
+})

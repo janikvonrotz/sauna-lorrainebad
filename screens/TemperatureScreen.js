@@ -5,7 +5,7 @@ import { AARE_TEMPERATURE } from '../components/Queries'
 import Loading from '../components/Loading'
 import Error from '../components/Error'
 import { useQuery } from '@apollo/react-hooks'
-import { MonoText } from '../components/StyledText'
+import { VerdanaText } from '../components/StyledText'
 
 function wait (timeout) {
   return new Promise(resolve => {
@@ -36,10 +36,11 @@ export default function TemperatureScreen () {
         }
       >
         <View style={styles.innerContainer}>
-          <MonoText>Vom Aare Guru erhalten wir die Temperatur. Die Aare Temperatur beträgt aktuell:</MonoText>
-          {loading ? <Loading /> : <MonoText style={styles.stat}>{`${data.aareTemperature.value}°C`}</MonoText>}
-          <MonoText>Dazu meint der Guru:</MonoText>
-          {loading ? <Loading /> : <MonoText style={styles.quote}>„{data.aareTemperature.quote}“</MonoText>}
+          <VerdanaText style={styles.text}>Die Aare Temperatur beträgt aktuell:</VerdanaText>
+          {loading ? <Loading /> : <>
+            <VerdanaText style={styles.stat}>{`${data.aareTemperature.value}°C`}</VerdanaText>
+            <VerdanaText style={styles.quote}>{data.aareTemperature.quote}</VerdanaText>
+          </>}
         </View>
       </ScrollView>
     </View>
@@ -59,13 +60,15 @@ const styles = StyleSheet.create({
     marginHorizontal: 30
   },
   stat: {
-    fontSize: 50,
-    marginTop: 10,
-    marginBottom: 20
+    fontSize: 48,
+    marginBottom: 10
   },
   quote: {
-    fontSize: 20,
-    marginTop: 10,
-    marginBottom: 20
+    fontSize: 18,
+    marginBottom: 10
+  },
+  text: {
+    fontSize: 18,
+    marginBottom: 10
   }
 })

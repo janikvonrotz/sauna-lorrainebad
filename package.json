@@ -8,7 +8,8 @@
     "eject": "expo eject",
     "test": "jest --watchAll",
     "lint": "standard",
-    "build": "expo-cli build:web"
+    "build": "expo-cli build:web",
+    "dev": "expo start --web"
   },
   "jest": {
     "preset": "jest-expo"
