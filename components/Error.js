@@ -1,9 +1,9 @@
 import React from 'react'
 import { Text, StyleSheet } from 'react-native'
 
-export default function Error () {
+export default function Error (props) {
   return (
-    <Text style={styles.text}>Error :(</Text>
+    <Text {...props} style={[props.style, styles]}>Error :(</Text>
   )
 }
 

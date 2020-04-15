@@ -9,14 +9,14 @@ export default function ContactScreen () {
     <View style={styles.container}>
       <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
         <View style={styles.innerContainer}>
-          <VerdanaText style={styles.contact}>Web: {
+          <VerdanaText style={styles.contact}>{
             <RectButton onPress={() => WebBrowser.openBrowserAsync('http://saunalorrainebad.ch/')}>
               <VerdanaText>saunalorrainebad.ch</VerdanaText>
             </RectButton>
           }
           </VerdanaText>
-          <VerdanaText style={styles.contact}>Tel: {<Text onPress={() => Linking.openURL('tel:+41788323264')}>078 832 32 64</Text>}</VerdanaText>
-          <VerdanaText style={styles.contact}>Mail: {
+          <VerdanaText style={styles.contact}>{<Text onPress={() => Linking.openURL('tel:+41788323264')}>078 832 32 64</Text>}</VerdanaText>
+          <VerdanaText style={styles.contact}>{
             <RectButton onPress={() => WebBrowser.openBrowserAsync('http://saunalorrainebad.ch/kontakt/')}>
               <VerdanaText>Kontaktformular</VerdanaText>
             </RectButton>

@@ -10,5 +10,6 @@ export default {
   warningText: '#666804',
   noticeBackground: defaultColor,
   noticeText: '#fff',
-  headerText: defaultColor
+  headerText: '#fff',
+  headerBackground: defaultColor
 }

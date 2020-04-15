@@ -5,6 +5,8 @@ import HomeScreen from '../screens/HomeScreen'
 import TemperatureScreen from '../screens/TemperatureScreen'
 import ContactScreen from '../screens/ContactScreen'
 import CapacityMessage from '../components/CapacityMessage'
+import Colors from '../constants/Colors'
+
 const BottomTab = createBottomTabNavigator()
 const INITIAL_ROUTE_NAME = 'Home'
 
@@ -13,7 +15,8 @@ export default function BottomTabNavigator ({ navigation, route }) {
   // currently active tab. Learn more in the documentation:
   // https://reactnavigation.org/docs/en/screen-options-resolution.html
   navigation.setOptions({
-    headerTitle: <CapacityMessage />
+    headerTitle: <CapacityMessage />,
+    headerStyle: { backgroundColor: Colors.headerBackground }
   })
   navigation.headerLayoutPreset = 'center'
 

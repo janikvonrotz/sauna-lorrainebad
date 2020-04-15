@@ -1,9 +1,9 @@
 import React from 'react'
 import { Text, StyleSheet } from 'react-native'
 
-export default function Loading () {
+export default function Loading (props) {
   return (
-    <Text style={styles.text}>Lädt...</Text>
+    <Text {...props} style={[props.style, styles]}>Lädt...</Text>
   )
 }
 
