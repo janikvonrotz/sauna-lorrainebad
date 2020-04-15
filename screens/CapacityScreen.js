@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 30
   },
   quote: {
-    fontSize: 20,
+    fontSize: 18,
     marginTop: 10,
     marginBottom: 20
   }

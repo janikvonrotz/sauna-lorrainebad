@@ -3,7 +3,7 @@ import { Text, StyleSheet } from 'react-native'
 
 export default function Loading (props) {
   return (
-    <Text {...props} style={[props.style, styles]}>Lädt...</Text>
+    <Text {...props} style={[props.style, styles.text]}>Lädt...</Text>
   )
 }
 
