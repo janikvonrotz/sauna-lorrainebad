@@ -43,7 +43,7 @@
   "devDependencies": {
     "@babel/core": "^7.0.0",
     "babel-preset-expo": "~8.0.0",
-    "expo-cli": "^3.16.1",
+    "expo-cli": "^6.0.8",
     "jest-expo": "~36.0.1",
     "standard": "^14.3.1"
   },
